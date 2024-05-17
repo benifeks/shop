@@ -7,8 +7,8 @@
       <img mat-card-image class="image" src="{{ product.image }}" />
     </mat-card-header>
     <mat-card-content>
-      <p>Price: {{ product.price }}</p>
-      <p>Year: {{ product.year | currency }}</p>
+      <p>Price: {{ product.price  | currency}}</p>
+      <p>Year: {{ product.year }}</p>
     </mat-card-content>
     <mat-card-actions>
       <button class="button" mat-flat-button color="primary">В корзину</button>
