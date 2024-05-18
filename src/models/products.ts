@@ -6,7 +6,7 @@ export interface IProductsConfig {
   }
 
 export interface IProducts {
-  id?: string;
+  id: string;
   title: string;
   price: number;
   image?: string;

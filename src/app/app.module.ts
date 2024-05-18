@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-
+import {MatMenuModule} from '@angular/material/menu';
 
 import { ProductsService } from 'src/services/products.service';
 import { ProductResolver } from 'src/services/product.resolver';
@@ -50,7 +50,8 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     MatDialogModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule,
   ],
   providers: [ProductsService, ProductResolver],
   bootstrap: [AppComponent],
