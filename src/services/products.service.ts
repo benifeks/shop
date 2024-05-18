@@ -12,4 +12,8 @@ export class ProductsService {
   public getProducts() {
     return this.http.get<IProducts[]>(this.url);
   }
+
+  public postProduct(product: IProducts) {
+    return this.http.post<IProducts>(this.url, product);
+  }
 }

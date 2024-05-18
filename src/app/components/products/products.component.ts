@@ -23,15 +23,18 @@ export class ProductsComponent implements OnInit {
     let dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.width = '500px';
-    dialogConfig.data = {
-      id: 1,
-    };
     const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
 
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   //console.log('The dialog was closed');
-    //   //this.animal = result;
-    // });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (!result) return;
+      this.postData(result);
+    });
+  }
+
+  public postData(data: IProducts) {
+    this.productsService
+      .postProduct(data)
+      .subscribe((data) => this.products.push(data));
   }
 
   public ngOnInit(): void {
