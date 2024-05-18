@@ -1,3 +1,11 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="example-spacer">
+      <button mat-flat-button (click)="openDialog()">Добавить товар</button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!--  -->
 <div class="container">
   <!--  -->
   <mat-card ngClass="example-card" *ngFor="let product of products">
@@ -7,7 +15,7 @@
       <img mat-card-image class="image" src="{{ product.image }}" />
     </mat-card-header>
     <mat-card-content>
-      <p>Price: {{ product.price  | currency}}</p>
+      <p>Price: {{ product.price | currency }}</p>
       <p>Year: {{ product.year }}</p>
     </mat-card-content>
     <mat-card-actions>

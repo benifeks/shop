@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
-import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
+
 
 import { ProductsService } from 'src/services/products.service';
 import { ProductResolver } from 'src/services/product.resolver';
@@ -19,6 +25,7 @@ import { BascketComponent } from './components/bascket/bascket.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { BaseComponent } from './components/base/base.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +47,10 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     MatButtonModule,
     MatCardModule,
     HttpClientModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductsService, ProductResolver],
   bootstrap: [AppComponent],
