@@ -1,5 +1,5 @@
 <div class="main">
-  <form [formGroup]="myForm" class="example-form">
+  <form [formGroup]="myForm" class="example-form" (submit)="onSubmit()">
     <mat-form-field class="example-full-width">
       <mat-label>Title</mat-label>
       <input matInput formControlName="title" />
@@ -35,10 +35,10 @@
       <input matInput formControlName="display" />
     </mat-form-field>
 
-    <button class="btn" mat-flat-button color="primary" (click)="onSubmit()">
+    <button class="btn" mat-flat-button color="primary" type="submit">
       Добавить
     </button>
-    <button class="btn" mat-flat-button color="primary" (click)="onNoClick()">
+    <button class="btn" mat-flat-button color="primary" type="button" (click)="onNoClick()">
       Отмена
     </button>
   </form>

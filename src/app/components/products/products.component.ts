@@ -26,8 +26,7 @@ export class ProductsComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe((result) => {
-      if (!result) return;
-      this.postData(result);
+      if (result) this.postData(result);
     });
   }
 
