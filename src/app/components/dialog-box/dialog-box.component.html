@@ -36,7 +36,7 @@
     </mat-form-field>
 
     <button class="btn" mat-flat-button color="primary" type="submit">
-      Добавить
+      {{isNew ? 'Добавить': 'Обновить'}}      
     </button>
     <button class="btn" mat-flat-button color="primary" type="button" (click)="onNoClick()">
       Отмена

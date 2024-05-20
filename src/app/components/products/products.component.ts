@@ -19,14 +19,32 @@ export class ProductsComponent implements OnInit {
     public dialog: MatDialog
   ) {}
 
-  public openDialog(): void {
+  public openDialog(product?: IProducts): void {
     let dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.width = '500px';
+    dialogConfig.data = product;
     const dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) this.postData(result);
+    dialogRef.afterClosed().subscribe((data) => {
+      if (data) {
+        if (data && data.id) {
+          this.updateData(data);
+          return;
+        }
+        this.postData(data);
+      }
+    });
+  }
+
+  public updateData(product: IProducts) {
+    this.productsService.updateProduct(product).subscribe((data) => {
+      this.products = this.products.map((product) => {
+        if (product.id === data.id) {
+          return data;
+        }
+        return product;
+      });
     });
   }
 
@@ -39,8 +57,8 @@ export class ProductsComponent implements OnInit {
   public deleteItem(id: number) {
     this.productsService.deleteProduct(id).subscribe(() =>
       this.products.find((product: IProducts) => {
-        if (id === +product.id) {
-          let indexProduct = this.products.findIndex((item) => +item.id === id);
+        if (id === product.id) {
+          let indexProduct = this.products.findIndex((item) => item.id === id);
           this.products.splice(indexProduct, 1);
         }
       })

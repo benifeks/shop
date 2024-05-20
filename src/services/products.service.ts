@@ -18,6 +18,10 @@ export class ProductsService {
   }
 
   public deleteProduct(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    return this.http.delete<IProducts>(`${this.url}/${id}`);
+  }
+
+  public updateProduct(product: IProducts) {
+    return this.http.put<IProducts>(`${this.url}/${product.id}`, product);
   }
 }

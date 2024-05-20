@@ -38,6 +38,18 @@
         "memory": "16GB",
         "display": "Retina"
       }
+    },
+    {
+      "id": 4,
+      "title": null,
+      "price": null,
+      "image": "assets/images/macbooks/macbook2.jpg",
+      "year": null,
+      "configure": {
+        "chip": null,
+        "memory": null,
+        "display": null
+      }
     }
   ]
 }
